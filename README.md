@@ -11,7 +11,7 @@
 ### Built with
 
 - Html
-- Css
+- Tailwind Css
 - Javascript
 - Node JS
 - Express
