@@ -24,6 +24,7 @@ formContentChat.style.display = "none";
 formShowUsers.style.display = "none";
 formChatGrupal.style.display = "none";
 
+// Escuchamos el evento "login" del servidor y mostramos una alerta de bienvenida al usuario
 socket.on("login", () => {
   alert("Welcome " + txtUserNickName.value.trim());
   formLogin.style.display = "none";
@@ -33,15 +34,13 @@ socket.on("login", () => {
   currentUser = txtUserNickName.value.trim();
 });
 
+// Escuchamos el evento "userExists" del servidor y mostramos una alerta indicando que el username ya está en uso
 socket.on("userExists", () => {
-  alert(
-    "El nickname: " +
-      txtUserNickName.value.trim() +
-      " ya está en uso, intenta con otro."
-  );
+  alert("The username " + txtUserNickName.value.trim() + "already exist");
   txtUserNickName.value = "";
 });
 
+// Escuchamos el evento "activeSessions" del servidor y actualizamos la lista de usuarios activos
 socket.on("activeSessions", (users) => {
   printUsersActive.innerHTML = "";
   for (const user in users) {
@@ -49,6 +48,7 @@ socket.on("activeSessions", (users) => {
   }
 });
 
+// Escuchamos el evento "sendMessage" del servidor y mostramos el mensaje enviado por el usuario
 socket.on("sendMessage", ({ message, user, image }) => {
   let messageClass = "frnd_message";
   if (user === currentUser) {
@@ -103,12 +103,10 @@ btnSendMessage.addEventListener("click", () => {
 txtUserMessage.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     if (fileURL != undefined) {
-      {
-        socket.emit("sendMessage", {
-          message: txtUserMessage.value.trim(),
-          image: fileURL,
-        });
-      }
+      socket.emit("sendMessage", {
+        message: txtUserMessage.value.trim(),
+        image: fileURL,
+      });
     } else {
       if (txtUserMessage.value.trim() != "") {
         socket.emit("sendMessage", {

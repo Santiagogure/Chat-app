@@ -235,10 +235,12 @@ section.body-chat {
   margin-top: 5px;
   font-size: 0.85em;
   opacity: 0.5;
+  color: black;
 }
 
 .message.my_message {
   justify-content: flex-end;
+  color: white;
 }
 
 .message.frnd_message {
