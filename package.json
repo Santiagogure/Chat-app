@@ -3,5 +3,8 @@
     "boxicons": "^2.1.4",
     "express": "^4.18.2",
     "socket.io": "^4.6.1"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
