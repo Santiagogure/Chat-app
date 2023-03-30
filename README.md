@@ -5,13 +5,13 @@
 <p align="center">Live Site (in a few days) <a href="/">Here</a>.</p>
 
 <div align="center">
-  <img src=""https://media.discordapp.net/attachments/613523626230022146/1090277295601746121/image-wp.PNG?width=960&height=455 alt="Chat-bot">
+  <img src="https://media.discordapp.net/attachments/613523626230022146/1090277295601746121/image-wp.PNG?width=960&height=455" alt="Chat-bot">
 </div>
 
 ### Built with
 
 - Html
-- Css
+- Tailwind Css
 - Javascript
 - Node JS
 - Express
